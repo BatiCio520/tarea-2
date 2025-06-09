@@ -1,0 +1,40 @@
+
+TAREA 2: SistemaEvaluacionBloom
+
+Descripción general:
+
+En esta  Tarea se usa Java para gestionar y evaluar preguntas educativas clasificadas por niveles según la Taxonomía de Bloom.
+
+Estructura de carpetas y archivos:
+
+
+1. SistemaEvaluacionBloom.iml
+   - Archivo de configuración del proyecto (IntelliJ IDEA).
+   - Define bibliotecas externas y rutas de fuente.
+
+2. crear_bd_preguntas.sql
+   - Crea la base de datos 'evaluacion_bloom' y su tabla 'preguntas'.
+   - La tabla incluye campos para enunciado, opciones, respuesta correcta, nivel de Bloom, tipo de pregunta y tiempo estimado.
+
+3. insertar_preguntas.sql
+   - Inserta preguntas de ejemplo con distintos niveles de Bloom y tipos de pregunta (MULTIPLE_CHOICE y TRUE_FALSE).
+
+4. mysql-connector-j-9.3.0.jar
+   - Conector JDBC necesario para que Java se comunique con MySQL.
+
+5. Carpeta 'controladores/QuizController.java'
+   - Controlador que gestiona la lógica del cuestionario.
+   - Métodos para navegar entre preguntas y generar estadísticas por tipo y nivel de Bloom.
+
+6. Carpeta 'crud/DatabaseManager.java'
+   - Maneja la conexión a la base de datos.
+   - Extrae las preguntas de la tabla y las transforma en objetos 'Question'.
+
+7. Carpeta 'modelo/'
+   - BloomLevel.java: Enum con los niveles cognitivos (RECORDAR, ENTENDER, etc.).
+   - QuestionType.java: Enum con los tipos de preguntas.
+   - Question.java: Clase que representa una pregunta (id, enunciado, opciones, etc.).
+
+Resumen:
+
+Este sistema permite gestionar preguntas educativas clasificadas por los niveles de la taxonomia de bloom y facilita su evaluación a través de una interfaz de Java conectada a MySQL.
