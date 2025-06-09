@@ -16,7 +16,7 @@ public class DatabaseManager {
     public List<Question> loadQuestions() throws SQLException {
         List<Question> questions = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
-            String query = "SELECT * FROM preguntas";
+            String query = "SELECT * FROM preguntas ORDER BY RAND() LIMIT 10";
             try (PreparedStatement stmt = conn.prepareStatement(query);
                  ResultSet rs = stmt.executeQuery()) {
 
